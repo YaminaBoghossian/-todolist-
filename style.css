@@ -1,0 +1,101 @@
+                /* Fonts */
+                
+                @font-face {
+                    font-family: "Cutie Patootie";
+                    src: url('fonts/Cutie Patootie.ttf');
+                    font-family: "Vonique 92 Regular";
+                    src: url('fonts/Vonique 92 Regular.otf');
+                }
+                /* Body specifications */
+                
+                body {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    background-image: url("bcktodolist.jpg");
+                }
+                /*Title div Header */
+                
+                .title {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    width: 100%;
+                }
+                
+                h1 {
+                    font-size: 55px;
+                    font-family: "Vonique 92 Regular";
+                    color: whitesmoke;
+                    text-shadow: 4px, 4px, 4px, white;
+                }
+                
+                i {
+                    font-size: 2em;
+                    color: salmon;
+                }
+                /* Form Div */
+                
+                .todo {
+                    width: 50%;
+                    height: 100px;
+                    margin-bottom: auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                }
+                
+                label {
+                    font-family: "Cutie Patootie";
+                    font-size: 30px;
+                    color: salmon;
+                }
+                
+                fieldset {
+                    border: none;
+                }
+                
+                #titre {
+                    border: none;
+                    font-family: "Cutie Patootie";
+                    font-size: 20px;
+                    color: wheat;
+                }
+                
+                #liste {
+                    border: none;
+                    font-family: "Cutie Patootie";
+                    font-size: 15px;
+                    color: wheat;
+                }
+                
+                #button {
+                    color: salmon;
+                    width: 80px;
+                    height: 30px;
+                    font-size: 30px;
+                    font-family: "cutie Patootie";
+                    border: none;
+                    margin-left: 0;
+                }
+                
+                div {
+                    width: 50%;
+                }
+                
+                input {
+                    background: rgba(0, 0, 0, 0);
+                }
+                
+                form {
+                    height: 100px;
+                }
+                
+                #button {
+                    color: salmon;
+                    width: 90px;
+                    height: 40px;
+                    box-shadow: 5px, 5px, 3px, 2px, black;
+                    font-size: 30px;
+                    font-family: "Cutie Patootie";
+                }

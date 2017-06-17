@@ -5,137 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://use.fontawesome.com/896f46ebc9.js"></script>
-    <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://use.fontawesome.com/896f46ebc9.js"></script>
+    <title>todolist</title>
 </head>
 
 <body>
 
-    <!DOCTYPE html>
-    <html lang="en">
+    <section class="title">
+        <h1> TO DO LIST
+        </h1>
+    </section>
+    <!-- Formulaire -->
+    <section class="todo">
+        <form>
+            <fieldset>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>todolist</title>
-    </head>
+                <input type="text" name="nom" id="titre" placeholder="Task">
 
-    <body>
-
-        <section class="title">
-            <h1> To do list <i class="fa fa-check" aria-hidden="true"></i>
-            </h1>
-        </section>
-        <!-- Formulaire -->
-        <section class="todo">
-            <form>
-                <fieldset>
-                    <label for="titre">Task :</label>
-                    <input type="text" name="nom" id="titre">
-                    <label class="listelabel" for="liste">Comments : </label>
-                    <input type="text" name="prenom" id="liste">
-
-                    <input type="submit" value="Add" id="button" </fieldset>
-            </form>
-        </section>
+                <input type="text" name="prenom" id="liste" placeholder="Comments">
+            </fieldset>
+            <fieldset>
+                <input type="submit" value="Add" id="button">
+            </fieldset>
+        </form>
+    </section>
 
 
-        <script>
-            let buttonadd = document.querySelector('#button');
-            let form = document.querySelector('form');
-            let i = 0;
+    <script>
+        let buttonadd = document.querySelector('#button');
+        let form = document.querySelector('form');
+        let i = 0;
 
-            // Put event on form //
+        // Put event on form //
 
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-                i = i + 1
-                    // get values of TITRE and LISTE //
+            i = i + 1
+                // get values of TITRE and LISTE //
 
-                let titre = document.querySelector('#titre').value;
+            let titre = document.querySelector('#titre').value;
 
-                let liste = document.querySelector('#liste').value;
+            let liste = document.querySelector('#liste').value;
 
-                // creation of div element //
+            // creation of div element //
 
-                let div = document.createElement('div');
-                div.id = 'div' + i;
-                document.body.appendChild(div);
+            let div = document.createElement('div');
+            div.id = 'div' + i;
+            document.body.appendChild(div);
 
-                div.style.backgroundColor = "rgba(250, 128, 114, 0.4)";
-                div.style.width = "50%";
-                div.style.textAlign = "center";
-                div.style.margin = "auto";
-                div.style.marginBottom = "20px";
+            div.style.backgroundColor = 'rgba(131, 150, 130, 0.2)';
+            div.style.width = "60%";
+            div.style.textAlign = "center";
+            div.style.margin = "auto";
+            div.style.marginBottom = "20px";
 
-
-                // creation of p 1 element //
-
-                let para1 = document.createElement('p');
-                para1.innerHTML = titre;
-
-                document.body.querySelector('#div' + i).appendChild(para1);
-                para1.style.fontSize = '20px';
-                para1.style.fontFamily = "Cutie Patootie";
-
-                // creation of p 2 element //
-
-                let para2 = document.createElement('p');
-                para2.innerHTML = liste;
-                document.body.querySelector('#div' + i).appendChild(para2);
-                para2.style.fontSize = '15px';
-                para2.style.fontFamily = 'Cutie Patootie';
-
-
-                // creation of delete button //
-
-                let buttondel = document.createElement('button');
-                buttondel.innerHTML = 'delete';
-                buttondel.id = 'delete' + i;
-                document.body.querySelector('#div' + i).appendChild(buttondel);
-                buttondel.style.fontFamily = "Vonique 92 Regular";
-                buttondel.style.fontSize = "10px";
-                buttondel.style.width = "90px";
-                buttondel.style.height = "20px";
+            div.style.padding = '10px';
+            div.style.border = '2px solid #FFF';
 
 
 
 
 
-                console.log(i);
+            // creation of p 1 element //
 
-                let buttondelete = document.querySelector('#delete' + i);
+            let para1 = document.createElement('p');
+            para1.innerHTML = titre;
 
-                // Put event on delete button  //
+            document.body.querySelector('#div' + i).appendChild(para1);
+            para1.style.fontSize = '20px';
+            para1.style.fontFamily = "LemonMilklight";
+            para1.style.color = 'white';
 
-                buttondelete.addEventListener('click', function(event) {
-                    this.parentNode.remove(this);
+            // creation of p 2 element //
 
-                    console.log('removed');
+            let para2 = document.createElement('p');
+            para2.innerHTML = liste;
+            document.body.querySelector('#div' + i).appendChild(para2);
+            para2.style.fontSize = '10px';
+            para2.style.fontFamily = 'LemonMilklight';
 
-                });
+
+
+            // creation of delete button //
+
+            let buttondel = document.createElement('button');
+            buttondel.innerHTML = 'done!';
+            buttondel.id = 'delete' + i;
+            document.body.querySelector('#div' + i).appendChild(buttondel);
+            buttondel.style.fontFamily = "LemonMilklight";
+            buttondel.style.fontSize = "0.5em";
+            buttondel.style.width = "60px"
+            buttondel.style.height = "40px";
+            buttondel.style.textAlign = 'center';
+            buttondel.style.padding = '10px';
+            buttondel.style.border = '2px solid #FFF';
+
+
+
+
+
+
+
+
+            console.log(i);
+
+            let buttondelete = document.querySelector('#delete' + i);
+
+            // Put event on delete button  //
+
+            buttondelete.addEventListener('click', function(event) {
+                this.parentNode.remove(this);
+
+                console.log('removed');
 
             });
 
-
-
-            let add = function(val) {
-                arr.push(val);
-
-
-            };
-
-            let del = function(val2) {
-                del.splice(val2);
-
-            }
-        </script>
-    </body>
+        });
 
 
 
-    </html>
+        let add = function(val) {
+            arr.push(val);
+
+
+        };
+
+        let del = function(val2) {
+            del.splice(val2);
+
+        }
+    </script>
+</body>
+
+
+
+</html>
